@@ -62,7 +62,7 @@ class Timer extends Component {
 
 shouldComponentUpdate takes in two arguments, the next props and state from the potential update. That is to say, when a component is about to update, it calls shouldComponentUpdate, passing in the new props and state. Whatever the return value is will determine if the component will continue with the update process. Because of this, from within shouldComponentUpdate, we have access to both the current props and state, accessible with this.state and this.props, and the next props and state, represented below as nextProps and nextState: */
 
-shouldComponentUpdate = (nextProps, nextState) =>{
+shouldComponentUpdate = (nextProps, nextState) =>{ //If statement to determine if compoonentDidUpdate should be called
   if (this.state.time === nextState.time) {
     return false //true -true-false makes changes only when there are changes in the app, and disables the time from ticking until changes to the app (increment interval or add new timer) are make, although the clock will remain ticking in the background
     // setting false/ true makes means that the componentDidUpdate should not update if the only if the time does not change. "Out of the box, the shouldComponentUpdate() is a no-op that returns true. This means every time we start an Update in a Component, we will re-render."
